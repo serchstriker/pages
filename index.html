@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El despojo territorial en la Sierra Nororiental de Puebla</title>
+    <style>
+        :root {
+            --primary: #1b4332;       /* Verde bosque profundo (inspirado en la sierra) */
+            --secondary: #2d6a4f;     /* Verde pino / musgo para contrastes y acentos */
+            --bg-color: #f4f6f7;
+            --text-color: #2b2b2b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        /* Menú de navegación superior */
+        nav {
+            background: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-bottom: 3px solid #52b788;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+        nav ul li a:hover {
+            background: var(--secondary);
+        }
+        /* Encabezado */
+        header {
+            background: linear-gradient(135deg, #081c15, #1b4332, #2d6a4f);
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid #40916c;
+        }
+        header h1 {
+            color: #ffffff;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+        header p {
+            color: #e9f5ed;
+            font-size: 1.05em;
+        }
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        section {
+            background: #fff;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+        }
+        h2 {
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        /* Alineación Justificada estricta para rigor académico */
+        p {
+            text-align: justify;
+        }
+
+        /* Acordeones Interactivos */
+        .accordion {
+            background-color: #f0f7f4;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 18px 20px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            border-left: 5px solid var(--secondary);
+            outline: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion:after {
+            content: '\002B';
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+        .accordion.active, .accordion:hover {
+            background-color: #e2ede7;
+        }
+        .accordion.active:after {
+            content: "\2212";
+        }
+        .panel {
+            padding: 0 20px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .figure-container {
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px;
+            background: #fafafa;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 12px auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .caption {
+            font-size: 0.9em;
+            color: #555;
+            font-style: italic;
+            text-align: center;
+        }
+        .multimedia-links, .saber-mas {
+            background: #eef5f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--secondary);
+        }
+        ul.reference-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        ul.reference-list li {
+            margin-bottom: 12px;
+            font-size: 0.95em;
+            text-align: justify;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #fff;
+            margin-top: 50px;
+            padding: 30px;
+            background: var(--primary);
+            border-top: 4px solid var(--secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Introducción</a></li>
+            <li><a href="#etapas">Desarrollo y Etapas</a></li>
+            <li><a href="#saber">Saber Más</a></li>
+            <li><a href="#referencias">Referencias y Créditos</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>El despojo territorial en la Sierra Nororiental de Puebla</h1>
+        <p><strong>Universidad Nacional Rosario Castellanos</strong></p>
+        <p><strong>Autora:</strong> Rosario Ortega Díaz | Doctorado en Investigación Social desde la Complejidad</p>
+    </header>
+
+    <div class="container">
+
+        <!-- INTRODUCCIÓN -->
+        <section id="inicio">
+            <h2>Introducción y Delimitación del Problema</h2>
+            <p>El presente proyecto documenta un problema estructural de justicia social en la Sierra Nororiental de Puebla: <strong>el despojo sistemático del territorio de las comunidades nahuas y totonacas</strong>, construido por el abuso de poder a partir de decisiones institucionales. En la zona de los municipios de Cuetzalan del Progreso, Yaonáhuac y Tlatlauquitepec se inicia cuando en 2007 la Secretaría de Economía otorga concesiones mineras —<em>Atexcaco I</em>, <em>II</em> y <em>Macuilquila</em>— a corporativos privados sin el consentimiento de los pueblos nahuas y totonacas. Esto constituye un problema crítico de justicia social, ya que el Estado ha vulnerado la autonomía comunitaria y el derecho a la consulta previa, ignorando que las comunidades indígenas son sujetos políticos con capacidad plena para decidir, poniendo en riesgo el agua, los bosques y la vida de los pueblos indígenas, ante la imposición de megaproyectos, las comunidades se han organizado para defender su territorio frente a leyes, organizaciones e instituciones que ignoran sus derechos colectivos denominando a estas acciones como <em>“Proyectos de Muerte”</em>.</p>
+            
+            <h3 style="margin-top: 30px; color: var(--primary);">Contexto geográfico y territorial de los pueblos nahuas y totonacas</h3>
+            <p>Este territorio no es solo un espacio geográfico, sino el soporte de la vida, la historia, la cultura, la identidad de los pueblos nahuas y totonacas en los municipios de Cuetzalan del Progreso, Yaonáhuac y Tlatlauquitepec en el estado de Puebla. Un espacio disputado donde las comunidades han generado una resistencia histórica ante proyectos extractivos, la omisión institucional e inconstitucionalidad de la ley minera por contener y desarrollar una estructura que legitima la violencia estructural de los pueblos (CEMDA, 2022).</p>
+
+            <div class="figure-container">
+                <img src="Figura 1.png" alt="Mapa de la Sierra Nororiental de Puebla">
+                <div class="caption"><strong>Figura 1.</strong> Sierra Nororiental de Puebla: Territorio de pueblos indígenas y procesos de defensa territorial. Fuente: Sistema Estatal de Información (SEI), Gobierno del Estado de Puebla (2026).</div>
+            </div>
+        </section>
+
+        <!-- DESARROLLO (ACORDEONES INTERACTIVOS) -->
+        <section id="etapas">
+            <h2>Desarrollo: Etapas y Dinámicas del Conflicto</h2>
+            <p><em>Haz clic en cada botón para desplegar la información, imágenes y recursos multimedia correspondientes:</em></p>
+            
+            <!-- Bloque 1 -->
+            <button class="accordion">Origen del conflicto y actores institucionales (2007)</button>
+            <div class="panel">
+                <div style="padding-top: 20px; padding-bottom: 20px;">
+                    <p style="margin-bottom: 15px;">En el año 2007, la Secretaría de Economía otorgó concesiones extractivas <em>Atexcaco I</em>, <em>Atexcaco II</em> y <em>Macuilquila</em> a empresas subsidiarias de corporativos mineros como Autlán y filiales de capital extranjero sin realizar una consulta previa a los pueblos indígenas nahuas y totonacas de la región, por lo que el Estado mexicano incurrió en una violación al Convenio 169 sobre pueblos indígenas y tribales de la Organización Internacional del Trabajo (OIT). De acuerdo con este tratado internacional —de observancia obligatoria en México conforme al artículo 1° constitucional— los gobiernos tienen la obligación de consultar previamente a los pueblos indígenas mediante procedimientos adecuados cada vez que se proyecten medidas legislativas o administrativas que les afecten directamente.</p>
+                    
+                    <p style="margin-bottom: 15px;">Sin embargo, bajo el amparo de la Ley Minera Federal se priorizó la explotación de los recursos con fines económicos por encima de los derechos colectivos y de protección de los recursos naturales. En esta etapa inicial las empresas mineras y la Dirección General de Minas argumentaban que estos proyectos generarían inversión, desarrollo económico, y empleos temporales para la región, lo que provocó ciertas divisiones o dudas en algunos sectores de las comunidades indígenas.</p>
+                    
+                    <p style="margin-bottom: 15px;">Las comunidades confrontaron el problema advirtiendo sobre el riesgo real del proyecto para el pueblo nahua y totonaca recordándoles que la tierra no es solo recurso económico, sino un espacio sagrado que comprende el <em>Talokan</em> – Morada de los señores de la vida y refugio de semillas, el agua y el fuego – y el <em>Tlaltipak</em>, que abarca todo lo habitado en el suelo. Para ellos los proyectos mineros representaban un riesgo de daño irreversible: la destrucción del <em>Talokan</em> y el <em>Tlaltipak</em> y la desaparición del <em>yeknemilis</em> (buen vivir) que incluye la milpa, cafetales, montes, sitios sagrados de agua y cuevas (CEMDA, 2022).</p>
+                    
+                    <p style="margin-bottom: 15px;">Estas decisiones provocaron una movilización de los pueblos indígenas en defensa del territorio y sus derechos colectivos. Las comunidades reclamaron autonomía, el respeto a los bienes naturales y al derecho a ser consultados en el futuro del territorio.</p>
+                    
+                    <div class="figure-container">
+                        <img src="Figura 2.jpg" alt="Asamblea de comunidades y del COTIC">
+                        <div class="caption"><strong>Figura 2.</strong> Asamblea de comunidades y del Comité del Ordenamiento Territorial Integral de Cuetzalan (COTIC), realizada en Cuetzalan, Puebla, en rechazo a proyectos mineros e hidroeléctricos. Fuente: Regeneración (2014).</div>
+                    </div>
+
+                    <div class="figure-container">
+                        <img src="Figura 3.jpg" alt="Movilización comunitaria">
+                        <div class="caption"><strong>Figura 3.</strong> Movilización comunitaria contra proyectos mineros en la Sierra Norte de Puebla. Fuente: La Izquierda Diario México (2017).</div>
+                    </div>
+
+                    <div class="multimedia-links">
+                        <p style="text-align: left;"><strong>Evidencia Documental / Video:</strong> <a href="https://www.youtube.com/watch?v=2vDNXvcdiOk" target="_blank">Subterráneos. (2014). No a los "proyectos de muerte" [Video]</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloque 2 -->
+            <button class="accordion">Reconocimiento y redes de solidaridad (2012)</button>
+            <div class="panel">
+                <div style="padding-top: 20px; padding-bottom: 20px;">
+                    <p style="margin-bottom: 15px;">Los pueblos nahuas y totonacas exigían el reconocimiento de sus derechos colectivos como la autonomía comunitaria, la preservación de su cultura e identidad, su relación histórica con los recursos naturales y las formas de organización comunitaria.</p> 
+                    
+                    <p style="margin-bottom: 15px;">Se tejieron redes de solidaridad y el respaldo de organizaciones sociales como el Centro Mexicano de Derecho Ambiental (CEMDA) que brindó acompañamiento jurídico con la asesoría para los amparos y defensa legal del territorio. Instituciones académicas como la IBERO, el Centro de Estudios para el Desarrollo Social, la Universidad de la Tierra en Puebla A.C. y la BUAP brindaron apoyo y reconocimiento intelectual. En 2012 se creó el Consejo Tiyat Tlali, una red regional de organizaciones – en la que se integra la Unión de Cooperativas Tosepan Titataniske – que fortalecieron la resistencia colectiva y visibilizaron el conflicto a través de documentales y medios de comunicación independientes. En este proceso los documentales independientes y los medios comunitarios funcionaron como altavoces que permitieron documentar la resistencia.</p>
+                    
+                    <div class="figure-container">
+                        <img src="Figura 4.png" alt="Logotipo del Consejo Tiyat Tlali">
+                        <div class="caption"><strong>Figura 4.</strong> Logotipo del Consejo Tiyat Tlali en Defensa de la Vida y Nuestro Territorio. Fuente: Consejo Tiyat Tlali.</div>
+                    </div>
+
+                    <div class="multimedia-links">
+                        <p style="text-align: left;"><strong>Recursos Documentales:</strong> <br>
+                        - <a href="https://www.youtube.com/watch?v=uZYxTVbitWc" target="_blank">Ramírez Cuevas, J. (Director). (2014). Sierra Norte por la Vida [Documental]</a>.<br>
+                        - <a href="https://cemda.org.mx/amparan-a-comunidades-del-pueblo-maseual-de-la-sierra-nororiental-de-puebla-en-contra-de-concesiones-mineras/" target="_blank">CEMDA (2016). Amparo en defensa del Pueblo Maseual</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloque 3 -->
+            <button class="accordion">Redistribución y gobernanza territorial (2010-2015)</button>
+            <div class="panel">
+                <div style="padding-top: 20px; padding-bottom: 20px;">
+                    <p style="margin-bottom: 10px; text-align: left;"><strong>Ordenamiento ecológico territorial y asambleas comunitarias</strong></p>
+                    <p style="margin-bottom: 15px;">Como parte de las acciones de defensa del territorio y de los derechos comunes, los pueblos nahuas y totonacas tejieron una estrategia donde lograron que en 2010 se aprobara el Programa de Ordenamiento Ecológico Territorial en Cuetzalan, un instrumento legal que frenaba el uso del suelo industrial; sin embargo, esto generó tensiones políticas con las autoridades locales y estatales, que intentaban minimizar o evadir su cumplimiento.</p>
+                    
+                    <p style="margin-bottom: 15px;">Las comunidades articularon el ordenamiento con la vía jurídica de los amparos federales y la presión social, conectando con otras luchas de otros territorios de la Sierra Nororiental de Puebla que también resistían a proyectos hidroeléctricos. En 2012 se creó el consejo Tiyat Tlali —una red de organizaciones sociales— y en 2015 la Unión de Cooperativas Tosepan Titataniske lo declaró dicho periodo como el año de la defensa territorial a través de masivas asambleas con más de 3 mil personas en apoyo al movimiento.</p>
+                    
+                    <div class="figure-container">
+                        <img src="Figura 5.jpg" alt="COTIC y Programa de Ordenamiento Ecológico">
+                        <div class="caption"><strong>Figura 5.</strong> Instrumentación del Programa de Ordenamiento Ecológico en Cuetzalan. Fuente: González, A. (2018). La Jornada del Campo.</div>
+                    </div>
+
+                    <div class="figure-container">
+                        <img src="Figura 6.png" alt="XIV Asamblea de Pueblos">
+                        <div class="caption"><strong>Figura 6.</strong> XIV Asamblea de Pueblos por la Defensa del Territorio y la Vida en Tlatlauquitepec (2016). Fuente: La Coperacha (2016).</div>
+                    </div>
+
+                    <div class="multimedia-links">
+                        <p style="text-align: left;"><strong>Video de análisis:</strong> <a href="https://www.youtube.com/watch?v=9FzWEZWZuhY" target="_blank">CCMSS AC. Amenazas al territorio en la Sierra Norte de Puebla [Video]</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloque 4 -->
+            <button class="accordion">Sentencia histórica y consolidación de la gobernanza territorial (2022-2025)</button>
+            <div class="panel">
+                <div style="padding-top: 20px; padding-bottom: 20px;">
+                    <p style="margin-bottom: 15px;">Después de generarse la articulación territorial entre comunidades nahuas y totonacas, organizaciones civiles, autoridades locales, instituciones académicas y organizaciones sociales, se consolidaron mecanismos autónomos de deliberación exigiendo el derecho a ser consultados de manera libre e informada, convirtiéndose en actores políticos activos de gobernanza territorial.</p>
+                    
+                    <p style="margin-bottom: 15px;">Años más tarde, durante el proceso legal de defensa, las compañías mineras y la Dirección General de Minas de la Secretaría de Economía intentaron justificar las concesiones argumentando que el título minero "no alteraba en nada la situación de los derechos de la comunidad" y que los impactos ocurrirían en etapas futuras de realización incierta, por lo que no debían ser materia de juicios de amparo. Los tribunales y las comunidades documentaron que la expedición de una concesión constituye, por sí misma, un acto de afectación directa a la autodeterminación y a los bienes comunes de los pueblos indígenas.</p>
+
+                    <p style="margin-bottom: 15px;">Como resultado de la solidaridad mostrada por actores sociales en marzo de 2022, el tercer Tribunal Colegiado en materia administrativa emitió una sentencia histórica donde deja sin efectos e invalidó los títulos de concesión minera <em>Atexcaco I</em>, <em>II</em> y <em>Macuilquila</em> al reconocer que se otorgaron sin garantizar el derecho a la consulta y consentimiento previo, libre e informado.</p>
+
+                    <p style="margin-bottom: 15px;">Tres años después en junio de 2025, el Poder Judicial emitió la sentencia definitiva favorable para los pueblos nahua y totonaca cerrando un proceso de litigio de más de una década para los municipios de Cuetzalan del Progreso, Yaonáhuac y Tlatlauquitepec y dejando libres aproximadamente 7,526 hectáreas. Pero el problema de despojo territorial en México no está completamente resuelto, siguen existiendo vacíos estructurales en la ley minera federal que vulnera el territorio de los pueblos indígenas.</p>
+
+                    <p style="margin-bottom: 15px;">Como lo han señalado reiteradamente el Consejo Tiyat Tlali y la Unión de Cooperativas Tosepan, la defensa del territorio es un proceso permanente y vivo. La sentencia judicial es solo una herramienta dentro de una lucha más amplia.</p>
+
+                    <p style="margin-bottom: 15px;"><em>“La cancelación de Atexcaco I, II y Macuilquila en 2025 resolvió un frente específico de la defensa territorial en la Sierra Nororiental. Sin embargo, en Puebla persisten conflictos no resueltos, como el rechazo comunitario al Polo de Desarrollo de Economía Circular para el Bienestar (PODECIBI) en San José Chiapa y la oposición al fracking en la Sierra Norte y el Totonacapan; ambos muestran que la defensa del territorio continúa más allá de la victoria judicial de 2025.”</em></p>
+
+                    <div class="figure-container">
+                        <img src="Figura 7.jpeg" alt="Noticia sobre la victoria maseual">
+                        <div class="caption"><strong>Figura 7.</strong> Cobertura sobre la sentencia histórica de 2025. Fuente: Radio Tosepan Limakxtum.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloque 5 -->
+            <button class="accordion">Los intereses corporativos y la simulación institucional</button>
+            <div class="panel">
+                <div style="padding-top: 20px; padding-bottom: 20px;">
+                    <p style="margin-bottom: 15px;">Para comprender por qué esta lucha se extendió por más de una década, es indispensable analizar las interacciones entre todos los actores del sistema. Por un lado, las empresas mineras (como subsidiarias de corporativos nacionales y extranjeros) impulsaron proyectos extractivos bajo la promesa de desarrollo económico, priorizando la ganancia privada y el lucro sobre el equilibrio ambiental. Por su parte, la Secretaría de Economía y diversas instancias gubernamentales operaron bajo una visión centralizada y omisa, entregando concesiones como <em>Atexcaco I</em>, <em>II</em> y <em>Macuilquila</em> a espaldas de las comunidades.</p>
+                    
+                    <p style="margin-bottom: 15px;">Esta relación entre el poder económico y gubernamental generó un escenario de asimetría extrema: las comunidades se enfrentaron a un desgaste institucional prolongado, a la incertidumbre jurídica y a la imposición de megaproyectos que amenazaban el agua y la tierra. La razón por la cual este proceso tardó tanto tiempo en resolverse favorablemente en los tribunales radica en que el sistema legal mexicano históricamente ha invisibilizado los derechos colectivos, obligando a los pueblos nahua y totonaca a construir una resistencia, basada en el derecho a la autodeterminación, la organización autónoma y la defensa jurídica incansable.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SABER MÁS -->
+        <section id="saber">
+            <h2>Saber más... Repositorio bibliográfico institucional</h2>
+            <div class="saber-mas">
+                <p>Para profundizar más en el análisis del problema social se pone a disposición el siguiente repositorio bibliográfico:</p>
+                <ul style="text-align: left;">
+                    <li>Canal Oficial de la SCJN: <a href="https://www.youtube.com/scjn" target="_blank">Enlace</a></li>
+                    <li>Página oficial del Consejo Tiyat Tlali: <a href="https://consejotiyattlali.blogspot.com/" target="_blank">Enlace</a></li>
+                    <li>Página oficial de la Tosepan: <a href="https://tosepan.coop/historia/" target="_blank">Enlace</a></li>
+                    <li>Centro Mexicano de Derecho Ambiental (CEMDA): <a href="https://cemda.org.mx/" target="_blank">Enlace</a></li>
+                    <li>Coalición Internacional para el Hábitat: <a href="https://hic-al.org/quienes-somos/hic/" target="_blank">Enlace</a></li>
+                    <li><strong>Conflictos no resueltos en Puebla:</strong>
+                        <ul style="margin-top: 5px;">
+                            <li>Avispa (2026): <a href="https://avispa.org/en-puebla-comunidades-rechazan-convertirse-en-el-basurero-industrial-de-la-economia-circular/" target="_blank">Comunidades rechazan basurero industrial</a></li>
+                            <li>Greenpeace México (2026): <a href="https://www.greenpeace.org/mexico/informacion-prensa/64830/comunidad-san-jose-chiapa-no-es-territorio-de-sacrificio/" target="_blank">San José Chiapa no es territorio de sacrificio</a></li>
+                            <li>Congreso Nacional Indígena (2026): <a href="http://www.congresonacionalindigena.org/2026/03/10/declaratoria-del-5-foro-informativo-por-la-defensa-del-agua-el-territorio-y-la-vida-por-la-autodeterminacion-de-los-pueblos-territorios-libres-de-mineria/" target="_blank">Declaratoria por territorios libres de minería</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CRÉDITOS Y REFERENCIAS -->
+        <section id="referencias">
+            <h2>Créditos y Referencias</h2>
+            <p><strong>Autoría e Investigación documental:</strong> Rosario Ortega Díaz / Doctorado en Investigación Social desde la Complejidad.</p>
+            <p><strong>Institución de adscripción:</strong> Universidad Nacional Rosario Castellanos / Instituto Tecnológico Superior de Álamo Temapache.</p>
+            <p><strong>Año:</strong> Octubre 2026.</p>
+            
+            <h3 style="margin-top: 30px;">Referencias Bibliográficas y Documentales</h3>
+            <ul class="reference-list">
+                <li>Alternativa Ecológica 2014. (2014, 22 de junio). <em>Sierra Norte por la Vida</em> [Vídeo]. YouTube. https://youtu.be/</li>
+                <li>Canal Once. (2020, 10 de febrero). <em>Hagamos que suceda – La fuerza de un pueblo: Tosepan</em> (09/02/2020) [Video]. YouTube. https://www.youtube.com/watch?v=AfZHoBx8LA</li>
+                <li>Centro de Estudios para el Cambio en el Campo Mexicano [CCMSS]. (2019, 5 de agosto). <em>Amenazas al territorio en la Sierra Norte de Puebla – Tosepan – Paulina Garrido</em> [Video]. YouTube. https://www.youtube.com/watch?v=9FzWEZWZuh</li>
+                <li>Centro Mexicano de Derecho Ambiental [CEMDA]. (2016, 6 de junio). <em>Amparan a comunidades del Pueblo Maseual de la Sierra Nororiental de Puebla en contra de concesiones mineras</em>. https://cemda.org.mx/amparan-a-comunidades-del-pueblo-maseual-de-la-sierra-nororiental-de-puebla-en-contra-de-concesiones-mineras/</li>
+                <li>Centro Mexicano de Derecho Ambiental [CEMDA]. (2022, 18 de marzo). <em>Pueblo masewal gana lucha en contra de la minería</em>. https://cemda.org.mx/amparan-a-comunidades-del-pueblo-maseual-de-la-sierra-nororiental-de-puebla-en-contra-de-concesiones-mineria/</li>
+                <li>Consejo Maseual de la Sierra Norte de Puebla. (2020, 11 de mayo). <em>Carta dirigida a ministras y ministros de la Suprema Corte de Justicia de la Nación</em> [Carta pública]. Centro Mexicano de Derecho Ambiental. https://www.cemda.org.mx/wp-content/uploads/2020/05/Carta-para-SCJN-.pdf</li>
+                <li>Consejo Tiyat Tlali. (s. f.). <em>¿Quiénes somos?</em> https://consejotiyattlali.blogspot.com/p/quienes-somos.html</li>
+                <li>Cronista. (2025, 26 de julio). Desde la Sierra: Lecciones de Tosepan contra la impunidad. <em>Crónica</em>. https://www.cronica.com.mx/jalisco/columnistas-jalisco/2025/07/26/desde-la-sierra-lecciones-de-tosepan-contra-la-impunidad/</li>
+                <li>Ellison, N. (2020). Altepet / Chuchutsipi: Cosmopolítica territorial totonaca-nahua y patrimonio biocultural en la Sierra Nororiental de Puebla, México. <em>REVISTA TRACE</em>, (78), 88-122. https://doi.org/10.22134/trace.78.2020.742</li>
+                <li>García Pérez, M. E. (2018). Los defensores de la vida contra los proyectos de muerte: Resistencias y articulaciones frente a la industria extractiva en la Sierra Norte de Puebla. <em>Bajo el Volcán, 18</em>(28), 109–143. https://www.redalyc.org/journal/286/28659183008/html/redalyc</li>
+                <li>HIC-AL. (2018, 26 de diciembre). Unión de Cooperativas Tosepan. <em>Hábitat International Coalition – América Latina</em>. https://hic-al.org/2018/12/26/union-de-cooperativas-tosepan/</li>
+                <li>La Izquierda Diario México. (2017, 20 de octubre). Luchamos contra proyectos de muerte porque lo más importante es la vida: Alonso Aco [Fotografía]. https://www.laizquierdadiario.mx/</li>
+                <li>La Jornada. (2025, 30 de junio). Cumplen sentencia para librar al Pueblo Maseual de proyectos mineros. <em>La Jornada</em>. https://www.jornada.com.mx/noticia/2025/06/30/estados/cumplen-sentencia-para-librar-al-pueblo-maseual-de-proyectos-mineros</li>
+                <li>Massieu Trigo, Y. (2017). Movimiento indígena, ordenamiento territorial y biodiversidad en Cuetzalan, Puebla. <em>Argumentos, 30</em>(83), 119–146. https://argumentos.xoc.uam.mx/index.php/argumentos/article/download/50/49</li>
+                <li>Organización Internacional del Trabajo [OIT]. (1989). <em>Convenio núm. 169 sobre pueblos indígenas y tribales en países independientes</em>. Ginebra, Suiza. https://www.ilo.org/dyn/normlex/es/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C169</li>
+                <li>Ramírez Cuevas, J. (Director). (2014). <em>Sierra Norte por la Vida</em> [Documental]. Cooperativa Tosepan Titataniske y Cooperativa Monopié. YouTube. https://www.youtube.com/watch?v=uZYxTVbitWc</li>
+                <li>Redacción La Coperacha. (2016, 27 de junio). La Asamblea de Pueblos por la Defensa del Territorio se opone a los "Proyectos de Muerte". <em>La Coperacha</em>. https://lacoperacha.org.mx/asamblea-pueblos-defensa-territorio-se-opone-a-proyectos-de-muerte/</li>
+                <li>Regeneración. (2016, 13 de diciembre). CFE pretende conectar proyectos de muerte en la Sierra Norte de Puebla [Fotografía]. https://regeneracion.mx/cfe-pretende-conectar-proyectos-de-muerte-en-la-sierra-norte-de-puebla</li>
+                <li>Subterráneos. (2014, 30 de enero). No a los "proyectos de muerte" [Video]. YouTube. https://www.youtube.com/watch?v=2vDNXvcdiOk</li>
+                <li>Suprema Corte de Justicia de la Nación [SCJN]. (2021). <em>Amparo en revisión 928/2019</em>. https://www2.scjn.gob.mx/juridica/engroses/2/2019/2/3_264414_5324_firmado.pdf</li>
+                <li>Suprema Corte de Justicia de la Nación [SCJN]. (2025). <em>Cuadernos de jurisprudencia núm. 27: Derecho a la consulta y justicia intercultural</em>. https://www.sitios.scjn.gob.mx/cec/sites/default/files/publication/documents/2025-01/CDJ_Derecho%20a%20una%20consulta_digital.pdf</li>
+                <li>Vázquez García, V., Ojeda Gutiérrez, D., Peña Godínez, E., & Zepeda Cancino, R. M. (2023). Defensa de la vida frente a los proyectos de muerte. Mujeres de la Sierra Norte de Puebla. <em>Economía, Sociedad y Territorio, 23</em>(72), 493-520. https://doi.org/10.22136/est20231978</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Proyecto Transmedia de Investigación Social - Doctorado en Investigación Social desde la Complejidad</p>
+    </footer>
+
+    <!-- Script JavaScript verificado para acordeones -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var acc = document.getElementsByClassName("accordion");
+            for (var i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    } 
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
